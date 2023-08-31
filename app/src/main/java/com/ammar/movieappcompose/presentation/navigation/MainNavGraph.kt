@@ -3,6 +3,7 @@ package com.ammar.movieappcompose.presentation.navigation
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.core.tween
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -11,6 +12,7 @@ import com.ammar.movieappcompose.presentation.screens.MovieListScreen
 import com.ammar.movieappcompose.presentation.utils.Screen
 
 
+@Preview
 @Composable
 fun MainNavGraph (
 ){

@@ -3,7 +3,6 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
     id("androidx.navigation.safeargs")
-    kotlin("kapt")
     id("com.google.dagger.hilt.android")
 }
 
@@ -77,8 +76,6 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:$nav_version")
     implementation("androidx.paging:paging-compose:3.2.0")
 
-
-
     //  Navigation Component
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
@@ -98,12 +95,11 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycle_version")
 
     //  Dagger hilt (DI)
-    implementation("com.google.dagger:hilt-android:2.47")
-    kapt("com.google.dagger:hilt-android-compiler:2.47")
+    implementation("com.google.dagger:hilt-android:2.48")
+    ksp("com.google.dagger:hilt-android-compiler:2.48")
     implementation("androidx.hilt:hilt-navigation-fragment:1.0.0")
     implementation ("androidx.hilt:hilt-navigation-compose:1.0.0")
-    kapt ("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.5.0")
-
+    ksp ("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.5.0")
 
     // Networking
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
@@ -112,10 +108,6 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.3")
     implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.2")
     implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
-
-//    // Moshi
-//    implementation("com.squareup.moshi:moshi-kotlin:1.15.0")
-//    ksp("com.squareup.moshi:moshi-kotlin-codegen:1.15.0")
 
     // Room and room pagination
     implementation("androidx.room:room-runtime:2.5.2")
@@ -129,7 +121,6 @@ dependencies {
     // Multidex
     implementation("androidx.multidex:multidex:2.0.1")
 
-
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -139,8 +130,3 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     }
-
-// Allow references to generated code
-kapt {
-    correctErrorTypes = true
-}
