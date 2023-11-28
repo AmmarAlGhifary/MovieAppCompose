@@ -50,11 +50,7 @@ fun MovieListScreen(navController: NavController, viewModel: MovieListViewModel 
     }.collectAsLazyPagingItems()
 
     val listState = rememberLazyListState()
-    Scaffold(topBar = {
-        TopAppBar(
-            title = { Text("Movie App Compose") }, backgroundColor = Color.White
-        )
-    }) {
+    Scaffold {
         if (lazyMovieItems.loadState.refresh is LoadState.Error) {
             ErrorView { lazyMovieItems.retry() }
         }
